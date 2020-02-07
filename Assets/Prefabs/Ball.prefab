@@ -123,12 +123,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273354ca32e150b49963de0db635a115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticle: {fileID: 0}
-  explosionAudio: {fileID: 0}
+  whatIsProp:
+    serializedVersion: 2
+    m_Bits: 256
   maxDamage: 100
   explosionForce: 1000
-  lifeTime: 10
   explosionRadius: 20
+  lifeTime: 10
 --- !u!1001 &2957832935493122366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,6 +137,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7505783760420750059}
     m_Modifications:
+    - target: {fileID: 2509177461792532325, guid: cbea4b426c270b14ab648e487fee5ee1,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5476910830438211019, guid: cbea4b426c270b14ab648e487fee5ee1,
         type: 3}
       propertyPath: m_Name

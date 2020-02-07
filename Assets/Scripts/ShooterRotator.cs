@@ -14,6 +14,8 @@ public class ShooterRotator : MonoBehaviour
     public float verticalRotateSpeed = 360.0f;      // 초당 360도  
     public float horizontalRotateSpeed = 360.0f;
 
+    public BallShooter ballShooter;
+
     private void Update()
     {
         switch(state)
@@ -44,11 +46,21 @@ public class ShooterRotator : MonoBehaviour
                 else if (Input.GetButtonUp("Fire1"))
                 {
                     state = RotateState.Ready;
+                    ballShooter.enabled = true;
                 }
                 break;
 
             case RotateState.Ready:
                 break;
         }
+    }
+
+    // 프랍들과 마찬가지로 스테이지마다 활성/비활성화 해 줄것이기 때문에
+    // OnEnalbe() 함수에서 초기화를 해 준다.
+    private void OnEnable()
+    {
+        transform.rotation = Quaternion.identity;
+        state = RotateState.Idle;
+        ballShooter.enabled = false;
     }
 }
