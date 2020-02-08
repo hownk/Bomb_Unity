@@ -48,6 +48,8 @@ public class Ball : MonoBehaviour
         explosionParticle.Play();   // 파티클, 효과음 플레이
         explosionAudio.Play();
 
+        GameManager.instance.OnBallDestroy();   // 게임매니저에 볼 파괴됬다고 알려주기
+
         // 파티클도 재생이 끝나면 파괴시킨다
         Destroy(explosionParticle.gameObject, explosionParticle.main.duration);
         Destroy(gameObject);    // 마지막으로 볼을 파괴

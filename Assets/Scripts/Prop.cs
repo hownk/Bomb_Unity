@@ -24,8 +24,9 @@ public class Prop : MonoBehaviour
             AudioSource explosionAudio = instance.GetComponent<AudioSource>();
             explosionAudio.Play();
 
-            Destroy(instance.gameObject, instance.main.duration);
+            GameManager.instance.AddScore(score);   // 게임매니저에 점수 더해주기
 
+            Destroy(instance.gameObject, instance.main.duration);
             // 스테이지마다 프롭들을 생산 하고 파괴하고 하면 비용이 크니까 비활성화 했다가 다시 활성화 하는식으로 하자.
             gameObject.SetActive(false);
         }

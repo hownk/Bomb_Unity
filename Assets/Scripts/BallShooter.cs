@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BallShooter : MonoBehaviour
 {
+    public CamFollow cam;
+
     // 생성할 볼, 발사위치, 슬라이더UI
     public Rigidbody ball;
     public Transform firePosition;
@@ -84,5 +86,7 @@ public class BallShooter : MonoBehaviour
 
         currentForce = minForce;
         powerSlider.value = minForce;
+
+        cam.SetTarget(ballInstance.transform, CamFollow.State.Tracking);
     }
 }
