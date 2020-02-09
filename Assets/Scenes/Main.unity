@@ -410,6 +410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0ac1e65b56dd84bb59a1ae34aee4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onReset:
+    m_PersistentCalls:
+      m_Calls: []
   messagePanel: {fileID: 692287181}
   scoreText: {fileID: 1187218074}
   bestScoreText: {fileID: 550628673}

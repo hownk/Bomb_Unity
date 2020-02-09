@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class BallShooter : MonoBehaviour
 {
-    public CamFollow cam;
+    // 포탄 발사시 카메라 타겟을 포탄으로
+    public CamFollow cam;   
 
     // 생성할 볼, 발사위치, 슬라이더UI
     public Rigidbody ball;

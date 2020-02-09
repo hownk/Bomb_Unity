@@ -10,12 +10,12 @@ public class SpawnGenerator : MonoBehaviour
 
     public int count = 100; // 생성할 개수
 
-    // 생성후에는 리스트로 관리
+    // 한번 생성후에는 리스트로 관리
     private List<GameObject> props = new List<GameObject>();
 
 
     // 처음에만 박스콜라이더 가져오고 count만큼 Spawn() 함수 실행
-    // 이후에 혹시 문제될까바 박스콜라이더는 비활성화 해 준다.
+    // 이후에 혹시 문제될까 봐 박스콜라이더는 비활성화 해 준다.
     private void Start()
     {
         area = GetComponent<BoxCollider>();

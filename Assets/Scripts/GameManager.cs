@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    public UnityEvent onReset;
+
     // 싱클턴패턴의 게임매니저 객체
     public static GameManager instance; 
 
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
     public CamFollow cam;
 
     // 생성자를 private으로 해서 외부에서 객체생성 막기
-    private GameManager() 
+    private GameManager()
     { }
 
     // static객체 자신으로 초기화
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
     IEnumerator RoundRoutine()
     {
         // 레디페이즈
+        onReset.Invoke();
         messagePanel.SetActive(true);
         cam.SetTarget(shooterRotator.transform, CamFollow.State.Idle);
         shooterRotator.enabled = false;
